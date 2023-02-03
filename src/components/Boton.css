@@ -1,0 +1,16 @@
+.texto{
+    font-size: 60px;
+    font: Cooper;
+    color: rgb(15, 15, 15);
+    background-color: rgb(37, 37, 37);
+    width: 200px;
+    margin: 0px auto;
+  }
+  
+  .boton-normal{
+    background-color: rgb(23, 72, 136);
+    font: Cooper;
+    height: 40px;
+    width: 60px;
+    margin: 5px;
+  }

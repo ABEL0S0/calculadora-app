@@ -1,3 +1,4 @@
+import { evaluate } from 'mathjs';
 import { useState } from 'react';
 import './App.css';
 import Boton from './components/Boton';
@@ -10,15 +11,18 @@ function App() {
   }
   const calcularClic=()=>{
     console.log("la operacion a calcular es: ",valor)
+    let resultado = evaluate(valor);
+    setValor(resultado);
+    console.log("La respuesta de la operacion es: ",resultado);
   }
   return (
-    <div className="App">
-      <h1>Calculadora</h1>
+    <div className="App App-header">
+      <h1 className='texto container'>Calculadora</h1>
       <div>
         <input type="text" value={valor} readOnly/>
       </div>
       <div>
-        <Boton hacerClic={hacerClic}>1</Boton>
+        <Boton hacerClic={hacerClic} >1</Boton>
         <Boton hacerClic={hacerClic}>2</Boton>
         <Boton hacerClic={hacerClic}>3</Boton>
         <Boton hacerClic={hacerClic}>+</Boton>
@@ -42,7 +46,7 @@ function App() {
         <Boton hacerClic={hacerClic}>/</Boton>
       </div>
       <div>
-        <button onClick={() => setValor("")}>CLEAR</button>
+        <button className='boton-operacion' onClick={() => setValor("")}>CLEAR</button>
       </div>
     </div>
   );
